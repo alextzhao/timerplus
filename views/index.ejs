@@ -26,6 +26,14 @@
 
     <!-- TODO: Add Authentication -->
     
+
+<!--       var recentRooms = mongo.roomsCollection.find().sort({
+      date: -1
+    }).limit(5);
+
+  console.log(recentRooms); -->
+
+
     <!-- Rooms Wrapper -->
     <div id="rooms-wrapper">
      <h4> Available Rooms </h4>
@@ -33,10 +41,15 @@
       <div class="collection" id="rooms">
         <a href="/timerplus" class="collection-item">Room1</a>
         <a href="/room2" class="collection-item">Room2</a>
-        <a href="#!" class="collection-item">Alvin</a>
-        <a href="#!" class="collection-item">Alvin</a>
+        
+        <!-- Add additional rooms from database -->
+        <% for (var i = rooms.length - 1; i >= 0; i--) { %>
+          <a href="/timerplus" class="collection-item"> <%= rooms[i].roomName %> </a>
+        <% } %>
       </div>
     </div>
+
+
       
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script> 
