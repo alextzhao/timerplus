@@ -2,7 +2,9 @@
 <html>
   <head>
     <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel='stylesheet' href='/stylesheets/materialize.css' />
+
   </head>
   <body>
     <h1><%= title %></h1>
@@ -11,17 +13,19 @@
 	
 	<!-- This is where we append the messages -->
 	<div id="msg-wrapper">
-		<ul id="messages"><ul>
+		<ul id="messages" class="collection">
+			<li class="collection-item"> Question 1 should be omitted</li>
+		<ul>
 	</div>
 
 
 	
 	<!-- Form to make announcement -->
 	<form id="message-form">
-		<textarea id="message-box" placeholder="Write your announcement here" required /> </textarea>
+		<textarea id="message-box" placeholder="Write your announcement here" required class="materialize-textarea" /> </textarea>
 	</form>
-	<button id="submit-button"> Make Announcement </button>
-	<button id="delete-last-button"> Delete Previous Announcement </button>
+	<button id="submit-button" class="waves-effect btn"> Make Announcement </button>
+	<button id="delete-last-button" class="waves-red btn"> Delete Previous Announcement </button>
 
 
   </body>
