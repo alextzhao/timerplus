@@ -13,6 +13,7 @@ router.get('/rooms/new', function (req, res, next) {
 });
 
 router.post('/rooms/new', function (req, res, next) {
+	console.log("received post request from create room")
 	// TODO: Here password is stored in plain text!
 	var roomData = {
 		roomName: req.body.roomName,
@@ -26,8 +27,8 @@ router.post('/rooms/new', function (req, res, next) {
 		if (err) {
 			next (err);
 		} else {
-			res.redirect('/');
-			res.send('your timer room' + req.body.roomName +  'has been created.');
+			console.log("a new room " + req.body.roomName + "has been created");
+			res.render('createRoomConfirmation', {roomName: req.body.roomName});
 		}
 	});
 
