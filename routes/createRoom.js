@@ -16,7 +16,10 @@ router.post('/rooms/new', function (req, res, next) {
 	// TODO: Here password is stored in plain text!
 	var roomData = {
 		roomName: req.body.roomName,
-		password: req.body.password
+		password: req.body.password,
+
+		// Store the time when room is added. Used for sorting.
+		date: new Date().getTime()		
 	}
 
 	roomsDb.addRoom (roomData, function (err) {

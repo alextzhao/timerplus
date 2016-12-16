@@ -15,7 +15,7 @@ var bodyParser = require('body-parser');
 var index = require('./routes/index');
 var timerplus = require('./routes/timerplus');
 var room2 = require('./routes/room2');
-
+var createRoom = require('./routes/createRoom');
 
 
 var app = express();
@@ -40,13 +40,13 @@ var io = require('socket.io')(server);
 
 //Mount index to the root
 app.use('/', index);
+app.use('/', createRoom);
 
 // Mounts tatimer to /tatimer
 app.use('/timerplus', timerplus);
 // TODO: How to do this automatically in the future? Need to allow
 // users to create a new room essentially to start their timer.
-app.use('/room2', room2);			
-
+app.use('/room2', room2);	
 
 
 // catch 404 and forward to error handler
