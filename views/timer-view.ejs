@@ -7,26 +7,73 @@
 
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to the <%= title %> timer and announcements room </p>
+    <h1 class="center-block center"><%= title %></h1>
+    <p class="center">Welcome to the <%= title %> timer and announcements room </p>
     
+
+
+
+
+	<!-- TIMER INPUT CLASS -->
+	<!-- TODO: Need to do timer validation here -->
+	<!-- TODO: Default values for timer -->
+    <div class="container" id="timer-wrapper">
+    	
+    	<!-- The class to read in the timer text -->
+    	<!-- TODO: The actual timer should be different -->
+    	<H3 class="title"> Timer </H3>
+    	<div id="timer-input">
+	    	<div class="row">
+	    		<input class="col s3" placeholder="HH" type="number" name="Hours" height="48">
+	    		<input class="col s3" placeholder="MM" type="number" name="Minutes" height="48">
+	    		<input class="col s3" placeholder="SS" type="number" name="Seconds" height="48">
+	    		<button type="submit" class="waves-effect btn s3">Start</button>
+	    		<!-- TODO: Hook up event listener to start timer -->
+	    	</div>
+    	</div>
+
+
+		<!-- Div class for an active timer -->
+    	<div id="active-timer">
+			<!-- TODO -->
+    	</div>
+
+
+    </div>
+
+
+
 	
+
+
 	<!-- This is where we append the messages -->
-	<div id="msg-wrapper">
-		<ul id="messages" class="collection">
-			<li class="collection-item"> Question 1 should be omitted</li>
-		<ul>
+	<div class="container">
+		<div class="row">
+			<h3 class="title"> Announcements </h3>
+			<!-- IDEA: add a slider react component to adjust text size -->
+		</div>
+		<div id="msg-wrapper">
+			<ul id="messages" class="collection">
+				<li class="collection-item"> Question 1 should be omitted</li>
+			<ul>
+		</div>
 	</div>
 
 
 	
-	<!-- Form to make announcement -->
+
+
+
+	<!-- Form to make announcements -->
 	<form id="message-form">
 		<textarea id="message-box" placeholder="Write your announcement here" required class="materialize-textarea" /> </textarea>
 	</form>
 	<button id="submit-button" class="waves-effect btn"> Make Announcement </button>
 	<button id="delete-last-button" class="waves-red btn"> Delete Previous Announcement </button>
+	<!-- TODO: Add event listener for the make announements button -->
 
+	
+	
 
   </body>
 </html>
